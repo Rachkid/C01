@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# ce code permet d'effectuer des opérations mathématiques
+# ce code permet d'effectuer des opérations de calcul mathématiques
 
 a=$1
 b=$2
@@ -18,6 +18,6 @@ elif [ "$op" = "/" ]; then
     resultat=$((a / b))
 fi
 
-echo "le resultat est : $resultat"
+echo "Le resultat est : $resultat"
 
 exit 0
