@@ -1,8 +1,9 @@
 #!/bin/bash
 
 # ce code compte le nombre de fichiers contenu dans un dossier.
-#ls : Liste les fichiers 1 par ligne.
-#wc -l : Compte le nombre de fichiers.
+# ls : Liste les fichiers 1 par ligne.
+# wc -l : Compte le nombre de fichiers.
+
 echo "Entrez le nom du répertoire :"
 
 read dossier 
