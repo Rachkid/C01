@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# ce code compte le nombre de fichiers contenu dans un répertoire
 echo "Entrez le chemin du dossier :"
 read dossier
 
