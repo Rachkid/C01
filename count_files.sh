@@ -1,13 +1,14 @@
 #!/bin/bash
 
-# ce code compte le nombre de fichiers contenu dans un dossier.
-# ls : Liste les fichiers 1 par ligne.
-# |: ce symbole prend ce que ls affiche et l'envoie à wc -l pour traitement 
-# wc -l : Compte le nombre de fichiers.
-
-echo "Entrez le nom du répertoire :"
-
-read dossier 
-count=$(ls "$dossier" | wc -l)
-counts=$(echo $count)
-echo "Le dossier $dossier contient $counts fichier(s)."
+echo "Entrez le nom du dossier :"
+read folder
+#Vérifie si le nom saisi correspond à un dossier existant (-d teste l’existence d’un répertoire).
+if [ -d "$folder" ]; then
+#ls -l "$folder" : liste les fichiers et dossiers avec détails.
+#Le grep "^-": filtre seulement les fichiers normaux, car dans la sortie de ls -l, les lignes qui commencent par - représentent des fichiers.
+#wc -l : compte le nombre de lignes, donc le nombre de fichiers.
+    count=$(ls -l "$folder" | grep "^-" | wc -l)
+    echo "Le dossier $folder contient $count fichier(s)."
+else
+    echo "Le dossier $folder n'existe pas."
+fi
