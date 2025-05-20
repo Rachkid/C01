@@ -1,19 +1,18 @@
 #!/bin/bash
+# grep : permet de rechercher des chaînes de caractères spécifiques (ou des modèles plus complexes avec des expressions régulières) dans des fichiers.
+# -q (quiet ou silent) : empêche toute sortie à l'écran
+# La commande grep -q en shell est utilisée pour chercher un motif dans un texte, sans afficher le résultat, mais en se basant uniquement sur le code de retour (succès ou échec).
 
-echo "Entrez le nom du fichier :"
 read fichier
+read mot
 
-echo "Entrez la chaîne à rechercher :"
-read chaine
-#Vérifie si le fichier existe bien (-f teste un fichier régulier).
-if [ -f "$fichier" ]; then
-#grep -q pour rechercher en silence la chaîne.
-#-q signifie "quiet" : ne rien afficher, juste donner le code retour (0 si trouvé, 1 si non trouvé).
-    if grep -q "$chaine" "$fichier"; then
-        echo "La chaîne '$chaine' a été trouvée dans $fichier."
-    else
-        echo "La chaîne '$chaine' n'a pas été trouvée dans $fichier."
-    fi
+if grep -q "$mot" "$fichier" ; then
+  echo "La chaîne '$mot' a été trouvée dans $fichier."
 else
-    echo "Le fichier $fichier n'existe pas."
+  echo "La chaîne '$mot' n'a pas été trouvée dans $fichier."
 fi
+
+
+
+
+
